@@ -1,33 +1,40 @@
 📘 Gestion des Comptes Bancaires — React + GraphQL + Spring Boot
 
-Cette application permet de gérer des comptes bancaires à travers une interface web construite avec React, connectée à un backend Spring Boot GraphQL.
-Elle couvre trois fonctionnalités principales : ajout de compte, ajout de transaction, et affichage des listes.
+Cette application permet de gérer des comptes bancaires via une interface web moderne construite avec React + Apollo Client, connectée à un backend Spring Boot GraphQL.
+
+Elle propose trois grandes fonctionnalités :
+
+Ajout de compte bancaire
+
+Ajout de transaction (dépôt / retrait)
+
+Affichage automatique des listes (comptes + transactions)
 
 ⚙️ Installation
 🔹 1. Backend (Spring Boot)
 
 Ouvrir le projet backend dans IntelliJ ou VS Code
 
-Lancer l’application avec :
+Exécuter l’application :
 
 mvn spring-boot:run
 
 
-Le backend tourne sur :
+Accéder aux interfaces :
 
 GraphQL : http://localhost:8082/graphql
 
 H2 Console : http://localhost:8082/h2-console
 
-URL : jdbc:h2:mem:banque
+Paramètres H2 :
 
-User : sa
-
-Password : (vide)
-
+Paramètre	Valeur
+URL	jdbc:h2:mem:banque
+User	sa
+Password	(vide)
 🔹 2. Frontend (React + Apollo Client)
 
-Dans le dossier du frontend :
+Dans le dossier du projet frontend :
 
 npm install
 npm start
@@ -63,7 +70,7 @@ TailwindCSS
 🎯 Fonctionnalités de l’application
 ✔️ 1. Ajout d’un compte bancaire
 
-L’utilisateur peut créer un nouveau compte en renseignant :
+L’utilisateur peut créer un compte en saisissant :
 
 un solde initial
 
@@ -75,11 +82,11 @@ le backend crée le compte
 
 une date de création automatique est ajoutée
 
-le compte apparaît instantanément dans la liste
+le compte apparaît instantanément dans la liste des comptes
 
 ✔️ 2. Affichage de la liste des comptes
 
-L’interface affiche tous les comptes enregistrés, avec :
+L’application affiche automatiquement tous les comptes avec :
 
 ID du compte
 
@@ -89,25 +96,25 @@ Type de compte
 
 Date de création
 
-La liste se met à jour automatiquement à chaque ajout.
+La liste se met à jour en temps réel après chaque ajout.
 
 ✔️ 3. Ajout d’une transaction
 
-Il est possible d’effectuer :
+L’utilisateur peut effectuer :
 
 un dépôt
 
 un retrait
 
-Pour chaque transaction, l’utilisateur saisit :
+Il doit renseigner :
 
-l’ID du compte concerné
+l’ID du compte
 
 le montant
 
 le type de transaction
 
-Une fois envoyée :
+Après validation :
 
 la transaction est enregistrée
 
@@ -115,7 +122,7 @@ une date automatique est ajoutée
 
 ✔️ 4. Affichage de la liste des transactions
 
-Une section dédiée affiche toutes les transactions, avec :
+La liste des transactions affiche :
 
 Montant
 
